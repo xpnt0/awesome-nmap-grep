@@ -91,9 +91,7 @@ $ egrep -v "^#|Status: Up" $NMAP_FILE | cut -d' ' -f2,4- | \
 ```bash
 NMAP_FILE=output.grep
 
-egrep -v "^#|Status: Up" $NMAP_FILE | cut -d' ' -f4- | \
-sed -n -e 's/Ignored.*//p' | tr ',' '\n' | sed -e 's/^[ \t]*//' | \
-sort -n | uniq -c | sort -k 1 -r | head -n 10
+egrep -v "^#|Status: Up" $NMAP_FILE | cut -d' ' -f4-  | sed -e 's/Ignored.*//p' | tr ',' '\n' | sed -e 's/^[ \t]*//' | sort -n | uniq -c | sort -k 1 -r | head -n 10
 ```
 
 ### output
