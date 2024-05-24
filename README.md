@@ -27,7 +27,7 @@ Finally, the `NMAP_FILE` variable is set to contain `output.grep`.
 NMAP_FILE=output.grep
 
 egrep -v "^#|Status: Up" $NMAP_FILE | cut -d' ' -f2,4- | \
-sed -n -e 's/Ignored.*//p' | \
+sed  -e 's/Ignored.*//g' | \
 awk -F, '{split($0,a," "); printf "Host: %-20s Ports Open: %d\n" , a[1], NF}' \
 | sort -k 5 -g
 ```
