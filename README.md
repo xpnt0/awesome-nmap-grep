@@ -216,7 +216,7 @@ awk '{print "Host: " $1; $1=""; for(i=2; i<=NF; i++) { a=a" "$i; }; split(a,s,",
 ### output
 
 ```bash
-Host: 127.0.0.1 Ports: 16
+Host: 127.0.0.1 
 open     tcp/22    ssh
 open     tcp/53    domain
 open     tcp/80    http
@@ -233,6 +233,7 @@ open     tcp/49152 unknown
 open     tcp/49153 unknown
 filtered tcp/54695
 filtered tcp/58369
+Total Ports: 16
 ```
 
 ## banner grab
