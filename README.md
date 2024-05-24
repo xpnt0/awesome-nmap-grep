@@ -9,6 +9,7 @@ All of the below commands assume the output was saved to a file called
 outputs was: `nmap -v --reason 127.0.0.1 -sV -oG output.grep -p-`.
 
 Finally, the `NMAP_FILE` variable is set to contain `output.grep`.
+For further explanation of the behavior of the command `sed`. [Source](https://unix.stackexchange.com/a/630681)
 
 ## commands
 
