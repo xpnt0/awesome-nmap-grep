@@ -210,7 +210,7 @@ NMAP_FILE=output.grep
 
 egrep -v "^#|Status: Up" $NMAP_FILE | cut -d' ' -f2,4- | \
 sed 's/Ignored.*//g'  | \
-awk '{print "Host: " $1 " Ports: " NF-1; $1=""; for(i=2; i<=NF; i++) { a=a" "$i; }; split(a,s,","); for(e in s) { split(s[e],v,"/"); printf "%-8s %s/%-7s %s\n" , v[2], v[3], v[1], v[5]}; a="" }'
+awk '{print "Host: " $1; $1=""; for(i=2; i<=NF; i++) { a=a" "$i; }; split(a,s,","); for(e in s) { split(s[e],v,"/"); printf "%-8s %s/%-7s %s\n" , v[2], v[3], v[1], v[5]}; a="" }' > xpnt.txt&& cat xpnt.txt && echo "Total Ports: " $(cat xpnt.txt|grep 'tcp' | wc -l)&&rm xpnt.txt
 ```
 
 ### output
